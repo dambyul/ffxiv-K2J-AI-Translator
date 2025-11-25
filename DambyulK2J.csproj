@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Authors>dambyul</Authors>
+    <Version>1.0.0.0</Version>
+    <Description>dambyul-k2j-ai-translator</Description>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Platforms>x64</Platforms>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <RootNamespace>DambyulK2J</RootNamespace>
+    <DalamudPluginManifest>$(MSBuildProjectDirectory)\plugin.json</DalamudPluginManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Dalamud.Bindings.ImGui">
+      <HintPath>Dalamud.Bindings.ImGui.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    
+    <Reference Include="FFXIVClientStructs">
+      <HintPath>FFXIVClientStructs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3">
+      <Private>false</Private>
+      <ExcludeAssets>runtime</ExcludeAssets>
+    </PackageReference>
+
+    <Reference Include="Dalamud">
+      <HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\Dalamud.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lumina">
+      <HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\Lumina.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Lumina.Excel">
+      <HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\Lumina.Excel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="plugin.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

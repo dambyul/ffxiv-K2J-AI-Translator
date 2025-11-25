@@ -1,0 +1,14 @@
+bin/
+obj/
+.vs/
+.vscode/
+*.dll
+*.pdb
+*.exe
+*.zip
+*.user
+*.suo
+*.userprefs
+.DS_Store
+Thumbs.db
+!plugin.json
