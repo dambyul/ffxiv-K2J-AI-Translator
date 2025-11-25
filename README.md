@@ -1,8 +1,8 @@
-# dambyul-k2j-ai-translator
+# ffxiv-K2J-AI-Translator
 
 **파이널판타지14 글로벌 서버(Global Server) 한국인 유저를 위한 실시간 한일 AI 번역 플러그인**
 
-**dambyul-k2j-ai-translator**는 Google Gemini AI를 활용하여, 게임 내 채팅창에 입력한 한국어를 문맥에 맞는 자연스러운 일본어(경어체)로 즉시 번역해 주는 Dalamud 플러그인입니다.
+**ffxiv-K2J-AI-Translator**는 Google Gemini AI를 활용하여, 게임 내 채팅창에 입력한 한국어를 문맥에 맞는 자연스러운 일본어(경어체)로 즉시 번역해 주는 Dalamud 플러그인입니다.
 
 단순 번역을 넘어, 파티원의 닉네임을 인식하여 오역을 방지하고, 글로벌 서버 환경에 맞춰 한글 출력을 원천 차단하는 등 철저한 안전 장치가 마련되어 있습니다.
 
@@ -63,7 +63,7 @@
 ### 3. 게임 내 로드
 1.  게임 접속 후 `/xlsettings` 입력 → **Experimental** 탭 클릭.
 2.  **Dev Plugin Locations**에 빌드된 결과물 폴더 경로를 추가하고 저장합니다.
-3.  `/xlplugins` 입력 → **dambyul-k2j-ai-translator**를 찾아 설치/로드합니다.
+3.  `/xlplugins` 입력 → **ffxiv-K2J-AI-Translator**를 찾아 설치/로드합니다.
 
 ### 4. 사용하기
 1.  채팅창에 **/byul** 입력 → 설정창 오픈.
