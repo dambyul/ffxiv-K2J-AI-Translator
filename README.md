@@ -8,7 +8,7 @@
 
 ---
 
-## 주요 기능 (Key Features)
+## 주요 기능
 
 ### 1. AI 기반 실시간 번역
 * **Google Gemini 2.5 Flash** 모델을 사용하여 빠르고 정확하게 번역합니다.
@@ -31,9 +31,18 @@
 * **안전한 테스트 모드:** 기본 출력은 `Echo`(나에게만 보임)로 설정되어 있어 충분히 검증 후 파티 채팅으로 전환할 수 있습니다.
 * **직관적인 UI:** `/byul` 명령어로 설정창을 열어 API 키와 채널을 간편하게 관리할 수 있습니다.
 
+#### 설정 화면
+<img width="867" height="280" alt="image" src="https://github.com/user-attachments/assets/8d140444-37b0-4a47-b47c-9185322e1536" />
+
+#### 번역 테스트 (INPUT : 링크셀1, OUTPUT : 혼잣말)
+<img width="454" height="74" alt="image" src="https://github.com/user-attachments/assets/1824ed3c-426b-47e3-94df-ec08a0d7e3b2" />
+
+#### 번역 내역 조회
+<img width="479" height="243" alt="image" src="https://github.com/user-attachments/assets/d03aae12-116f-4aeb-a4a8-d3adfc14fac2" />
+
 ---
 
-## 향후 계획 (Roadmap)
+## 향후 계획
 
 이 프로젝트는 지속적으로 기능을 확장할 예정이며, 다음과 같은 업데이트가 준비 중입니다.
 
@@ -43,7 +52,7 @@
 
 ---
 
-## 설치 및 사용 방법 (Getting Started)
+## 설치 및 사용 방법
 
 이 플러그인은 현재 **개발자 플러그인(Dev Plugin)** 형태로 로드해야 합니다.
 
@@ -61,8 +70,8 @@
 3.  빌드가 성공하면 `bin/Release/net9.0-windows/` 폴더에 `DambyulK2J.dll`과 `plugin.json`이 생성됩니다.
 
 ### 3. 게임 내 로드
-1.  게임 접속 후 `/xlsettings` 입력 → **Experimental** 탭 클릭.
-2.  **Dev Plugin Locations**에 빌드된 결과물 폴더 경로를 추가하고 저장합니다.
+1.  게임 접속 후 `/xlsettings` 입력 → **실험적 기능** 탭 클릭.
+2.  **개발 플러그인 경로**에 빌드된 결과물 폴더 경로를 추가하고 저장합니다.
 3.  `/xlplugins` 입력 → **ffxiv-K2J-AI-Translator**를 찾아 설치/로드합니다.
 
 ### 4. 사용하기
@@ -73,7 +82,7 @@
 
 ---
 
-## 주의사항 (Disclaimer)
+## 주의사항
 
 * **제재 위험:** 이 플러그인은 외부 프로그램(3rd Party Tool)으로 분류되며, 게임사의 약관에 위배될 소지가 있습니다. 사용으로 인한 모든 책임(계정 제재 등)은 사용자 본인에게 있습니다.
 * **자동 전송 주의:** 파티 채팅으로 자동 전송하는 기능은 파티원에게 혼란을 줄 수 있으므로, 반드시 사전에 양해를 구하거나 `Echo` 모드로 충분히 테스트한 후 사용하시기 바랍니다.
@@ -81,7 +90,7 @@
 
 ---
 
-## 기술 스택 (Tech Stack)
+## 기술 스택
 
 * **Language:** C# (.NET 9.0)
 * **Framework:** Dalamud (API 13)
