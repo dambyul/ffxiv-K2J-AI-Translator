@@ -20,14 +20,14 @@ namespace DambyulK2J
     {
         public string Name => "dambyul K2J AI Translator";
 
-        [PluginService] internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
-        [PluginService] internal static IChatGui ChatGui { get; private set; } = null!;
-        [PluginService] internal static ICommandManager CommandManager { get; private set; } = null!;
-        [PluginService] internal static IFramework Framework { get; private set; } = null!;
-        [PluginService] internal static IClientState ClientState { get; private set; } = null!;
-        [PluginService] internal static IPartyList PartyList { get; private set; } = null!;
-        [PluginService] internal static IObjectTable ObjectTable { get; private set; } = null!;
-        [PluginService] internal static IGameInteropProvider GameInteropProvider { get; private set; } = null!;
+        internal static IDalamudPluginInterface PluginInterface { get; private set; } = null!;
+        internal static IChatGui ChatGui { get; private set; } = null!;
+        internal static ICommandManager CommandManager { get; private set; } = null!;
+        internal static IFramework Framework { get; private set; } = null!;
+        internal static IClientState ClientState { get; private set; } = null!;
+        internal static IPartyList PartyList { get; private set; } = null!;
+        internal static IObjectTable ObjectTable { get; private set; } = null!;
+        internal static IGameInteropProvider GameInteropProvider { get; private set; } = null!;
 
         private Configuration Configuration { get; init; }
         private PluginUI PluginUi { get; init; }
@@ -39,8 +39,24 @@ namespace DambyulK2J
         [Signature("48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC 20 48 8B F2 48 8B F9 45 84 C9")]
         private readonly ProcessChatBoxDelegate? ProcessChatBox = null;
 
-        public Plugin()
+        public Plugin(
+            IDalamudPluginInterface pluginInterface,
+            IChatGui chatGui,
+            ICommandManager commandManager,
+            IFramework framework,
+            IClientState clientState,
+            IPartyList partyList,
+            IObjectTable objectTable,
+            IGameInteropProvider gameInteropProvider)
         {
+            PluginInterface = pluginInterface;
+            ChatGui = chatGui;
+            CommandManager = commandManager;
+            Framework = framework;
+            ClientState = clientState;
+            PartyList = partyList;
+            ObjectTable = objectTable;
+            GameInteropProvider = gameInteropProvider;
             Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
             Configuration.Initialize(PluginInterface);
 

@@ -67,7 +67,7 @@
     dotnet clean
     dotnet build DambyulK2J.csproj --configuration Release
     ```
-3.  빌드가 성공하면 `bin/Release/net9.0-windows/` 폴더에 `DambyulK2J.dll`과 `plugin.json`이 생성됩니다.
+3.  빌드가 성공하면 `bin/Release/net10.0-windows/` 폴더에 `DambyulK2J.dll`과 `plugin.json`이 생성됩니다.
 
 ### 3. 게임 내 로드
 1.  게임 접속 후 `/xlsettings` 입력 → **실험적 기능** 탭 클릭.
@@ -92,8 +92,8 @@
 
 ## 기술 스택
 
-* **Language:** C# (.NET 9.0)
-* **Framework:** Dalamud (API 13)
+* **Language:** C# (.NET 10.0)
+* **Framework:** Dalamud (API 14)
 * **Libraries:**
     * `Google.GenerativeAI` (Rest API via HttpClient)
     * `FFXIVClientStructs` (Game Function Hooking)

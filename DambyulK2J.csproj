@@ -3,7 +3,7 @@
     <Authors>dambyul</Authors>
     <Version>1.0.0.0</Version>
     <Description>dambyul-k2j-ai-translator</Description>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <Platforms>x64</Platforms>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
@@ -12,17 +12,19 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <RootNamespace>DambyulK2J</RootNamespace>
-    <DalamudPluginManifest>$(MSBuildProjectDirectory)\plugin.json</DalamudPluginManifest>
+    <DalamudPluginManifest>plugin.json</DalamudPluginManifest>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="Dalamud.Bindings.ImGui">
-      <HintPath>Dalamud.Bindings.ImGui.dll</HintPath>
+      <HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\Dalamud.Bindings.ImGui.dll</HintPath>
       <Private>False</Private>
     </Reference>
     
     <Reference Include="FFXIVClientStructs">
-      <HintPath>FFXIVClientStructs.dll</HintPath>
+      <HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\FFXIVClientStructs.dll</HintPath>
       <Private>False</Private>
     </Reference>
 
@@ -30,6 +32,8 @@
       <Private>false</Private>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
+
+    <PackageReference Include="DalamudPackager" Version="2.1.13" />
 
     <Reference Include="Dalamud">
       <HintPath>$(AppData)\XIVLauncher\addon\Hooks\dev\Dalamud.dll</HintPath>
@@ -46,8 +50,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="plugin.json">
+    <Content Include="DambyulK2J.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(OutputPath)\DambyulK2J.json" DestinationFiles="$(OutputPath)\plugin.json" />
+  </Target>
 </Project>
